@@ -12,6 +12,7 @@
     "react-scripts": "^3.0.1",
     "styled-components": "^4.2.0"
   },
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
