@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@lightelligence/browser-sdk": "^0.3.1",
-    "@lightelligence/react": "^0.5.4",
-    "@lightelligence/styles": "^0.5.1",
+    "@lightelligence/browser-sdk": "^0.4.2",
+    "@lightelligence/react": "^0.6.3",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.0.0",
+    "react-scripts": "^3.0.1",
     "styled-components": "^4.2.0"
   },
   "scripts": {

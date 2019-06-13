@@ -1,44 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { Headline, Button } from "@lightelligence/react";
-import { Device } from "@lightelligence/browser-sdk";
-import styled from "styled-components/macro";
+import React from "react";
+import {
+  Headline,
+  Navbar,
+  Menu,
+  MenuItem,
+  Container,
+  Frame,
+  oltStyles
+} from "@lightelligence/react";
 import "./App.css";
-
-const StyledHeadline = styled(Headline)`
-  color: rebeccapurple;
-  font-family: sans-serif;
-`;
+import { Devices } from "./Devices";
 
 export const App = ({ browserSDK }) => {
-  const [devices, setDevices] = useState([]);
-
-  useEffect(() => {
-    const fetchDevices = async () => {
-      const { data } = await Device.getDevices();
-      setDevices(data);
-    };
-    fetchDevices();
-  }, []);
-
   const changeTenant = () => browserSDK.changeTenant();
-
   const logout = () => browserSDK.logout();
 
-  const deviceEntrys = devices.map(({ id, info: { name } }) => (
-    <li key={id}>{name}</li>
-  ));
-
   return (
-    <div>
-      <StyledHeadline size={1}>Devices</StyledHeadline>
-      <Button color="info" outline onClick={changeTenant}>
-        Change Tenant
-      </Button>
-      <Button color="error" outline onClick={logout}>
-        Log out
-      </Button>
-      <ul>{deviceEntrys}</ul>
-    </div>
+    <Frame>
+      <Navbar color="dark">
+        <Menu />
+        <Menu navbar>
+          <MenuItem onClick={changeTenant}>Change Tenant</MenuItem>
+          <MenuItem onClick={logout}>Log out</MenuItem>
+        </Menu>
+      </Navbar>
+      <Container
+        className={`${oltStyles.uMarginTop5} ${oltStyles.uMarginBottom5}`}
+      >
+        <Headline size={1}>Devices</Headline>
+        <Devices />
+      </Container>
+    </Frame>
   );
 };
 

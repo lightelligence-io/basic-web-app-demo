@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "@lightelligence/styles/dist/index.css";
+import "normalize.css";
+import "@lightelligence/react/dist/index.css";
+import BrowserSDK from "@lightelligence/browser-sdk/dist/bundle";
 import "./index.css";
 import App from "./App";
-import BrowserSDK from "@lightelligence/browser-sdk/dist/bundle.web";
 
 const browserSDK = new BrowserSDK({
   environment: "prod",
