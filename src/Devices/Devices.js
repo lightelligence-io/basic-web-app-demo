@@ -1,5 +1,5 @@
-import React from "react";
-import { Grid, GridItem } from "@lightelligence/react";
+import React, { Fragment } from "react";
+import { Grid, GridItem, Headline } from "@lightelligence/react";
 import { useGetDevices } from "./useGetDevices";
 import { Device } from "./Device";
 
@@ -10,5 +10,10 @@ export const Devices = () => {
       <Device {...info} />
     </GridItem>
   ));
-  return <Grid>{deviceEntrys}</Grid>;
+  return (
+    <Fragment>
+      <Headline size={1}>Devices</Headline>
+      <Grid>{deviceEntrys}</Grid>
+    </Fragment>
+  );
 };
